@@ -1,0 +1,79 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url("/imgs/background.png");
+  background-size: cover;
+}
+
+.world {
+  overflow: hidden;
+  position: relative;
+
+  /* background-image: url("/imgs/background.png"); */
+}
+
+.score {
+  position: absolute;
+  font-size: 3vmin;
+  right: 1vmin;
+  top: 1vmin;
+}
+
+.caught{
+  position: absolute;
+  font-size: 5vmin;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.start-screen {
+  position: absolute;
+  font-size: 5vmin;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hide {
+  display: none;
+}
+
+.ground {
+  --left: 0;
+  position: absolute;
+  width: 300%;
+  bottom: -10%;
+  left: calc(var(--left) * 1%)
+}
+
+.dino {
+  --bottom: 0;
+  position: absolute;
+  left: 40%;
+  height: 30%;
+  bottom: calc(var(--bottom) * 1%);
+}
+.boss{
+  --bottom: 0;
+  position: absolute;
+  left: 5%;
+  height: 30%;
+  z-index: 10;
+  bottom: calc(var(--bottom) * 4%);
+}
+
+.cactus {
+  position: absolute;
+  left: calc(var(--left) * 1%);
+  height: 30%;
+  bottom: 0;
+}
