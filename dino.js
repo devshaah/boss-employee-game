@@ -66,8 +66,16 @@ function handleJump(delta) {
 }
 
 function onJump(e) {
-  if (e.code !== "Space" || isJumping) return
-
-  yVelocity = JUMP_SPEED
+  console.log(e.code)
+  if (e.code !== "Space" || isJumping) {}
+  else{
+  yVelocity = JUMP_SPEED*0.95
   isJumping = true
+  }
+  if(e.code!=="Enter" || isJumping) return
+  else{
+    console.log("enter");
+    yVelocity = JUMP_SPEED*1.1
+    isJumping = true
+  }
 }

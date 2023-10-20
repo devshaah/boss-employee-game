@@ -26,7 +26,7 @@ export function updateCactus(delta, speedScale) {
   })
 
   if (nextCactusTime <= 0) {
-    createCactus()
+    createCactus(nextCactusTime)
     nextCactusTime =
       randomNumberBetween(CACTUS_INTERVAL_MIN, CACTUS_INTERVAL_MAX) / speedScale
   }
@@ -39,10 +39,14 @@ export function getCactusRects() {
   })
 }
 
-function createCactus() {
+function createCactus(nextCactusTime) {
+  console.log(nextCactusTime);
   const cactus = document.createElement("img")
   cactus.dataset.cactus = true
-  cactus.src = "imgs/bench.png"
+  if(nextCactusTime>-5){
+  cactus.src = "imgs/bench.png"}
+  else{
+    cactus.src = "imgs/boss.png"}
   cactus.classList.add("cactus")
   setCustomProperty(cactus, "--left", 100)
   worldElem.append(cactus)
