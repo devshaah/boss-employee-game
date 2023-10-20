@@ -44,10 +44,14 @@ function createCactus(nextCactusTime) {
   const cactus = document.createElement("img")
   cactus.dataset.cactus = true
   if(nextCactusTime>-5){
-  cactus.src = "imgs/bench.png"}
-  else{
-    cactus.src = "imgs/boss.png"}
+  cactus.src = "imgs/bench.png"
   cactus.classList.add("cactus")
+}
+  else{
+    cactus.src = "imgs/bench-laptop.png"
+    cactus.classList.add("bench-laptop")
+  }
+  // cactus.classList.add("bench-laptop")
   setCustomProperty(cactus, "--left", 100)
   worldElem.append(cactus)
 }

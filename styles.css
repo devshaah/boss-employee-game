@@ -77,3 +77,10 @@ body {
   height: 30%;
   bottom: 0;
 }
+
+.bench-laptop{
+  position: absolute;
+  left: calc(var(--left) * 1%);
+  height: 40%;
+  bottom: 0;
+}
