@@ -30,7 +30,16 @@ export function updateDino(delta, speedScale) {
 }
 
 export function getDinoRect() {
-  return dinoElem.getBoundingClientRect()
+  const dinoRect = dinoElem.getBoundingClientRect();
+  const xOffset = 5; // Adjust as needed to make the rectangle smaller
+  const yOffset = 5; // Adjust as needed to make the rectangle smaller
+
+  return {
+    left: dinoRect.left + xOffset,
+    top: dinoRect.top + yOffset,
+    right: dinoRect.right - xOffset,
+    bottom: dinoRect.bottom - yOffset,
+  };
 }
 
 export function setDinoLose() {

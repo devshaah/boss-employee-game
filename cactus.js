@@ -35,8 +35,17 @@ export function updateCactus(delta, speedScale) {
 
 export function getCactusRects() {
   return [...document.querySelectorAll("[data-cactus]")].map(cactus => {
-    return cactus.getBoundingClientRect()
-  })
+    const cactusRect = cactus.getBoundingClientRect();
+    const xOffset = 5; // Adjust as needed to make the rectangle smaller
+    const yOffset = 5; // Adjust as needed to make the rectangle smaller
+
+    return {
+      left: cactusRect.left + xOffset,
+      top: cactusRect.top + yOffset,
+      right: cactusRect.right - xOffset,
+      bottom: cactusRect.bottom - yOffset,
+    };
+  });
 }
 
 function createCactus(nextCactusTime) {
