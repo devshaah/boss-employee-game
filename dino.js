@@ -34,6 +34,7 @@ export function getDinoRect() {
   const xOffset = 5; // Adjust as needed to make the rectangle smaller
   const yOffset = 5; // Adjust as needed to make the rectangle smaller
 
+  
   return {
     left: dinoRect.left + xOffset,
     top: dinoRect.top + yOffset,
